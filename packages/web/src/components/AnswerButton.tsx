@@ -1,10 +1,6 @@
 import clsx from "clsx"
 import { ButtonHTMLAttributes, ElementType, PropsWithChildren } from "react"
-
-type AnswerContent = {
-  text?: string
-  image?: string
-}
+import type { AnswerContent } from "@rahoot/web/utils/answer"
 
 type Props = PropsWithChildren &
   ButtonHTMLAttributes<HTMLButtonElement> & {

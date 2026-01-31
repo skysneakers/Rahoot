@@ -21,7 +21,7 @@ export type CommonStatusDataMap = {
   SHOW_QUESTION: { question: string; image?: string; cooldown: number }
   SELECT_ANSWER: {
     question: string
-    answers: string[]
+    answers: (string | { text?: string; image?: string })[]
     image?: string
     video?: string
     audio?: string
@@ -46,7 +46,7 @@ type ManagerExtraStatus = {
     question: string
     responses: Record<number, number>
     correct: number
-    answers: string[]
+    answers: (string | { text?: string; image?: string })[]
     image?: string
     video?: string
   }

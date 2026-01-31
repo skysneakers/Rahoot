@@ -19,7 +19,7 @@ export type Quizz = {
     image?: string
     video?: string
     audio?: string
-    answers: string[]
+    answers: (string | { text?: string; image?: string })[]
     solution: number
     cooldown: number
     time: number
