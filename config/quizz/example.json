@@ -25,6 +25,7 @@
       "time": 20
     },
     {
+<<<<<<< HEAD
       "question": "Which image shows a crab nebula?",
       "answers": [
         { "text": "Cancer", "image": "/images/quizz/Cancer.jpg" },
@@ -36,6 +37,20 @@
         "None of the above"
       ],
       "solution": 1,
+=======
+      "question": "What is good answer with video ?",
+      "answers": ["Good answer", "No", "No", "No"],
+      "video": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "solution": 0,
+      "cooldown": 5,
+      "time": 10
+    },
+    {
+      "question": "What is good answer with audio ?",
+      "answers": ["No", "No", "Good answer", "No"],
+      "audio": "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "solution": 2,
+>>>>>>> c40b16966da3b4feb68489f85affe1cb31244808
       "cooldown": 5,
       "time": 15
     }
