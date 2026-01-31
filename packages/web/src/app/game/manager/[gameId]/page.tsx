@@ -21,13 +21,27 @@ const ManagerGame = () => {
   const router = useRouter()
   const { gameId: gameIdParam }: { gameId?: string } = useParams()
   const { socket } = useSocket()
-  const { gameId, status, setGameId, setStatus, setPlayers, reset } =
-    useManagerStore()
+  const {
+    gameId,
+    status,
+    setGameId,
+    setInviteCode,
+    setStatus,
+    setPlayers,
+    reset,
+  } = useManagerStore()
   const { setQuestionStates } = useQuestionStore()
 
   useEvent("game:status", ({ name, data }) => {
     if (name in GAME_STATE_COMPONENTS_MANAGER) {
       setStatus(name, data)
+      if (
+        name === STATUS.SHOW_ROOM &&
+        "inviteCode" in data &&
+        data.inviteCode
+      ) {
+        setInviteCode(data.inviteCode)
+      }
     }
   })
 
@@ -39,8 +53,9 @@ const ManagerGame = () => {
 
   useEvent(
     "manager:successReconnect",
-    ({ gameId, status, players, currentQuestion }) => {
+    ({ gameId, inviteCode, status, players, currentQuestion }) => {
       setGameId(gameId)
+      if (inviteCode) setInviteCode(inviteCode)
       setStatus(status.name, status.data)
       setPlayers(players)
       setQuestionStates(currentQuestion)

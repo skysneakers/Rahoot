@@ -12,9 +12,26 @@ type Props = {
   data: CommonStatusDataMap["SHOW_RESULT"]
 }
 
-const Result = ({
-  data: { correct, message, points, myPoints, rank, aheadOfMe },
-}: Props) => {
+const Result = (props: Props) => {
+  // #region agent log
+  fetch("http://127.0.0.1:7242/ingest/6e087262-d926-4dde-815b-e39b1ae4edee", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      location: "Result.tsx:props",
+      message: "Result received props",
+      data: {
+        hasData: !!props.data,
+        keys: props.data ? Object.keys(props.data) : [],
+      },
+      timestamp: Date.now(),
+      sessionId: "debug-session",
+      hypothesisId: "A",
+    }),
+  }).catch(() => {})
+  // #endregion
+
+  const { correct, message, points, myPoints, rank, aheadOfMe } = props.data
   const player = usePlayerStore()
 
   const [sfxResults] = useSound(SFX_RESULTS_SOUND, {
@@ -22,6 +39,20 @@ const Result = ({
   })
 
   useEffect(() => {
+    // #region agent log
+    fetch("http://127.0.0.1:7242/ingest/6e087262-d926-4dde-815b-e39b1ae4edee", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        location: "Result.tsx:useEffect",
+        message: "Result useEffect running",
+        data: { myPoints, hasPlayer: !!player },
+        timestamp: Date.now(),
+        sessionId: "debug-session",
+        hypothesisId: "A,4",
+      }),
+    }).catch(() => {})
+    // #endregion
     player.updatePoints(myPoints)
 
     sfxResults()

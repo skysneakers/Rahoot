@@ -39,6 +39,24 @@ const Game = () => {
   )
 
   useEvent("game:status", ({ name, data }) => {
+    // #region agent log
+    fetch("http://127.0.0.1:7242/ingest/6e087262-d926-4dde-815b-e39b1ae4edee", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        location: "game/[gameId]/page.tsx:game:status",
+        message: "game:status received",
+        data: {
+          name,
+          hasData: !!data,
+          nameInComponents: name in GAME_STATE_COMPONENTS,
+        },
+        timestamp: Date.now(),
+        sessionId: "debug-session",
+        hypothesisId: "B,C,D",
+      }),
+    }).catch(() => {})
+    // #endregion
     if (name in GAME_STATE_COMPONENTS) {
       setStatus(name, data)
     }
@@ -56,6 +74,23 @@ const Game = () => {
   }
 
   let component = null
+
+  // #region agent log
+  if (status?.name === "SHOW_RESULT") {
+    fetch("http://127.0.0.1:7242/ingest/6e087262-d926-4dde-815b-e39b1ae4edee", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        location: "game/[gameId]/page.tsx:switch",
+        message: "Rendering SHOW_RESULT",
+        data: { statusName: status?.name, hasData: !!status?.data },
+        timestamp: Date.now(),
+        sessionId: "debug-session",
+        hypothesisId: "E",
+      }),
+    }).catch(() => {})
+  }
+  // #endregion
 
   switch (status?.name) {
     case STATUS.WAIT:

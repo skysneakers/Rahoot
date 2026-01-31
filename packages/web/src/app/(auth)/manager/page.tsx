@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 const Manager = () => {
-  const { setGameId, setStatus } = useManagerStore()
+  const { setGameId, setInviteCode, setStatus } = useManagerStore()
   const router = useRouter()
   const { socket } = useSocket()
 
@@ -24,6 +24,7 @@ const Manager = () => {
 
   useEvent("manager:gameCreated", ({ gameId, inviteCode }) => {
     setGameId(gameId)
+    setInviteCode(inviteCode)
     setStatus(STATUS.SHOW_ROOM, { text: "Waiting for the players", inviteCode })
     router.push(`/game/manager/${gameId}`)
   })

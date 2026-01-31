@@ -1,0 +1,209 @@
+{
+  "subject": "The Crab Is Right",
+  "questions": [
+    {
+      "question": "Which of the following is not named after a word for crab?",
+      "answers": [
+        { "image": "/images/quizz/Cancer.jpg" },
+        { "image": "/images/quizz/crab_w22.jpg" },
+        { "image": "/images/quizz/crab-nebula-mosaic-jpg.jpg" },
+        { "image": "/images/quizz/casa_life_lg.jpg" }
+      ],
+      "solution": 3,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "Name That Crab!",
+      "image": "/images/quizz/spongeDecorator.jpg",
+      "answers": [
+        { "text": "Harlequin Crab" },
+        { "text": "Sponge Decorator Crab" },
+        { "text": "Graceful Decorator Crab" },
+        { "text": "Toothed Decorator Crab" }
+      ],
+      "solution": 1,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "T/F: This crab (toothed decorator crab) is a true crab.",
+      "image": "/images/quizz/ToothedDecorator.jpg",
+      "answers": [{ "text": "True" }, { "text": "False" }],
+      "solution": 0,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "Which frog has \"crab\" in its name?",
+      "answers": [
+        { "image": "/images/quizz/bullfrog.jpg" },
+        { "image": "/images/quizz/mossyfrog.jpg" },
+        { "image": "/images/quizz/crabfrog.jpg" },
+        { "image": "/images/quizz/hornedfrog.jpg" }
+      ],
+      "solution": 2,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "How many times (at least) has carcinisation independently occurred?",
+      "answers": [5, 8, 2, 15],
+      "solution": 0,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "Name That Crab!",
+      "image": "/images/quizz/spinylitho.jpg",
+      "answers": [
+        { "text": "Spiny Lithode Crab" },
+        { "text": "Gall Crab" },
+        { "text": "Green Clinging Crab" },
+        { "text": "Subantarctic Stone Crab" }
+      ],
+      "solution": 0,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "The pea crab is the smallest crab in the world. How much do pea crabs weigh?",
+      "answers": [
+        { "text": "0.001-0.350 grams" },
+        { "text": "0.351-0.700 grams" },
+        { "text": "0.701-1.050 grams" },
+        { "text": "1.051-1.400 grams" }
+      ],
+      "solution": 0,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "What is the correct full scientific name of the Atlantic Blue Crab?",
+      "answers": [
+        {
+          "text": "Animalia Arthropoda Brachyura Portunidae Decapoda Callinectes Malacostraca Pleocyemata C. Sapidus"
+        },
+        {
+          "text": "Animalia Arthropoda Malacostraca Decapoda Pleocyemata Brachyura Portunidae Callinectes C. Sapidus"
+        },
+        {
+          "text": "Animalia Arthropoda Brachyura Callinectes Malacostraca Pleocyemata Portunidae Decapoda C. Sapidus"
+        },
+        {
+          "text": "Animalia Portunidae Arthropoda Callinectes Decapoda Malacostraca Brachyura Pleocyematas C. Sapidus"
+        }
+      ],
+      "solution": 1,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "When did the first true crabs appear in the fossil record?",
+      "answers": [
+        { "text": "Eocene Period" },
+        { "text": "Cretaceous Period" },
+        { "text": "Jurassic Period" },
+        { "text": "Permian Period" }
+      ],
+      "solution": 2,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "T/F: This crab (spotted porcelain crab) is a true crab.",
+      "image": "/images/quizz/porcelaincrab.jpg",
+      "answers": [{ "text": "True" }, { "text": "False" }],
+      "solution": 1,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "Recent studies have shown that Jonah Crabs, in lab conditions, ingest 70% of microplastics from their prey. Within 24 hours, how much of these microplastics do they egest?",
+      "answers": [
+        { "text": "75%" },
+        { "text": "50%" },
+        { "text": "10%" },
+        { "text": "99%" }
+      ],
+      "solution": 3,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "Name That Crab!",
+      "image": "/images/quizz/princess.webp",
+      "answers": [
+        { "text": "Princess Crab" },
+        { "text": "Panda Crab" },
+        { "text": "Sirindhorn Crab" },
+        { "text": "All of the above" }
+      ],
+      "solution": 3,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "Which of the following is NOT a sign of carcinisation?",
+      "answers": [
+        { "text": "Flattened and broadenedcarapace" },
+        { "text": "Strengthened fourth pair of walking legs" },
+        { "text": "Sternum consolidated" },
+        { "text": "Reduction and tucking of the abdomen" }
+      ],
+      "solution": 1,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "Which of the following objects is an adult Dungeness Crab wider than?",
+      "image": "/images/quizz/dungeness.jpg",
+      "answers": [
+        { "text": "A basketball" },
+        { "text": "A car tire" },
+        { "text": "A credit card" },
+        { "text": "All of the above" }
+      ],
+      "solution": 2,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "How fast can the fastest crab, the atlantic ghost crab, run?",
+      "image": "/images/quizz/ghost.jpg",
+      "answers": [
+        { "text": "5 mph" },
+        { "text": "10 mph" },
+        { "text": "15 mph" },
+        { "text": "20 mph" }
+      ],
+      "solution": 1,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "What is a group of crabs called?",
+      "answers": [
+        { "text": "A scuttle" },
+        { "text": "A colony" },
+        { "text": "A cast" },
+        { "text": "A union" }
+      ],
+      "solution": 2,
+      "cooldown": 5,
+      "time": 15
+    },
+    {
+      "question": "How many times have true crabs independently evolved to live on land?",
+      "answers": [
+        { "text": "5" },
+        { "text": "17" },
+        { "text": "21" },
+        { "text": "8" }
+      ],
+      "solution": 1,
+      "cooldown": 5,
+      "time": 15
+    }
+  ]
+}

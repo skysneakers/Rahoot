@@ -52,7 +52,8 @@ export const GAME_STATE_COMPONENTS_MANAGER = {
   [STATUS.FINISHED]: Podium,
 }
 
-export const SFX_ANSWERS_MUSIC = "/sounds/answersMusic.mp3"
+// export const SFX_ANSWERS_MUSIC = "/sounds/answersMusic.mp3"
+export const SFX_ANSWERS_MUSIC = "/sounds/crabrave.mp3"
 export const SFX_ANSWERS_SOUND = "/sounds/answersSound.mp3"
 export const SFX_RESULTS_SOUND = "/sounds/results.mp3"
 export const SFX_SHOW_SOUND = "/sounds/show.mp3"

@@ -1,10 +1,11 @@
 "use client"
 
 import { Status } from "@rahoot/common/types/game/status"
-import background from "@rahoot/web/assets/background.webp"
+import background from "@rahoot/web/assets/crabrave.jpg"
 import Button from "@rahoot/web/components/Button"
 import Loader from "@rahoot/web/components/Loader"
 import { useEvent, useSocket } from "@rahoot/web/contexts/socketProvider"
+import { useManagerStore } from "@rahoot/web/stores/manager"
 import { usePlayerStore } from "@rahoot/web/stores/player"
 import { useQuestionStore } from "@rahoot/web/stores/question"
 import { MANAGER_SKIP_BTN } from "@rahoot/web/utils/constants"
@@ -21,6 +22,7 @@ type Props = PropsWithChildren & {
 const GameWrapper = ({ children, statusName, onNext, manager }: Props) => {
   const { isConnected } = useSocket()
   const { player } = usePlayerStore()
+  const { inviteCode } = useManagerStore()
   const { questionStates, setQuestionStates } = useQuestionStore()
   const [isDisabled, setIsDisabled] = useState(false)
   const next = statusName ? MANAGER_SKIP_BTN[statusName] : null
@@ -58,23 +60,32 @@ const GameWrapper = ({ children, statusName, onNext, manager }: Props) => {
         </div>
       ) : (
         <>
-          <div className="flex w-full justify-between p-4">
-            {questionStates && (
-              <div className="shadow-inset flex items-center rounded-md bg-white p-2 px-4 text-lg font-bold text-black">
-                {`${questionStates.current} / ${questionStates.total}`}
+          <div className="flex w-full flex-col gap-2 p-4">
+            {manager && inviteCode && (
+              <div className="flex justify-center">
+                <div className="shadow-inset flex items-center rounded-md bg-white px-6 py-2 text-2xl font-bold text-black">
+                  Game PIN: {inviteCode}
+                </div>
               </div>
             )}
+            <div className="flex w-full justify-between">
+              {questionStates && (
+                <div className="shadow-inset flex items-center rounded-md bg-white p-2 px-4 text-lg font-bold text-black">
+                  {`${questionStates.current} / ${questionStates.total}`}
+                </div>
+              )}
 
-            {manager && next && (
-              <Button
-                className={clsx("self-end bg-white px-4 text-black!", {
-                  "pointer-events-none": isDisabled,
-                })}
-                onClick={handleNext}
-              >
-                {next}
-              </Button>
-            )}
+              {manager && next && (
+                <Button
+                  className={clsx("self-end bg-white px-4 text-black!", {
+                    "pointer-events-none": isDisabled,
+                  })}
+                  onClick={handleNext}
+                >
+                  {next}
+                </Button>
+              )}
+            </div>
           </div>
 
           {children}

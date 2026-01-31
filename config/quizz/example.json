@@ -23,6 +23,21 @@
       "solution": 0,
       "cooldown": 5,
       "time": 20
+    },
+    {
+      "question": "Which image shows a crab nebula?",
+      "answers": [
+        { "text": "Cancer", "image": "/images/quizz/Cancer.jpg" },
+        {
+          "text": "Crab Nebula",
+          "image": "/images/quizz/crab-nebula-mosaic-jpg.jpg"
+        },
+        { "text": "Crab", "image": "/images/quizz/crab_w22.jpg" },
+        "None of the above"
+      ],
+      "solution": 1,
+      "cooldown": 5,
+      "time": 15
     }
   ]
 }

@@ -4,6 +4,7 @@ import { CommonStatusDataMap } from "@rahoot/common/types/game/status"
 import AnswerButton from "@rahoot/web/components/AnswerButton"
 import { useEvent, useSocket } from "@rahoot/web/contexts/socketProvider"
 import { usePlayerStore } from "@rahoot/web/stores/player"
+import { normalizeAnswer } from "@rahoot/web/utils/answer"
 import {
   ANSWERS_COLORS,
   ANSWERS_ICONS,
@@ -100,16 +101,15 @@ const Answers = ({
           </div>
         </div>
 
-        <div className="mx-auto mb-4 grid w-full max-w-7xl grid-cols-2 gap-1 rounded-full px-2 text-lg font-bold text-white md:text-xl">
+        <div className="mx-auto mb-4 grid w-full max-w-7xl grid-cols-2 gap-3 rounded-full px-2 text-lg font-bold text-white md:gap-4 md:text-xl">
           {answers.map((answer, key) => (
             <AnswerButton
               key={key}
               className={clsx(ANSWERS_COLORS[key])}
               icon={ANSWERS_ICONS[key]}
+              content={normalizeAnswer(answer)}
               onClick={handleAnswer(key)}
-            >
-              {answer}
-            </AnswerButton>
+            />
           ))}
         </div>
       </div>
