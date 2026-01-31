@@ -53,9 +53,15 @@ const ManagerGame = () => {
 
   useEvent(
     "manager:successReconnect",
-    ({ gameId, inviteCode, status, players, currentQuestion }) => {
+    ({ gameId, status, players, currentQuestion }) => {
       setGameId(gameId)
-      if (inviteCode) setInviteCode(inviteCode)
+      if (
+        status.name === STATUS.SHOW_ROOM &&
+        "inviteCode" in status.data &&
+        status.data.inviteCode
+      ) {
+        setInviteCode(status.data.inviteCode)
+      }
       setStatus(status.name, status.data)
       setPlayers(players)
       setQuestionStates(currentQuestion)
