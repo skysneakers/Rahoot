@@ -2,12 +2,20 @@ version: "3.8"
 
 services:
   rahoot:
-    image: ralex91/rahoot:latest
-    ports:
-      - "3000:3000"
-      - "3001:3001"
+    build: .
+    image: rahoot:latest
     volumes:
       - ./config:/app/config # Path to your game config
     environment:
-      - WEB_ORIGIN=http://localhost:3000
-      - SOCKET_URL=http://localhost:3001
+      - WEB_ORIGIN=${WEB_ORIGIN:-https://your-domain.com}
+      - SOCKET_URL=${SOCKET_URL:-https://your-domain.com}
+
+  caddy:
+    image: caddy:latest
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - rahoot

@@ -1,0 +1,14 @@
+:80 {
+    redir https://{host}{uri} permanent
+}
+:443 {
+    tls {
+        on_demand
+    }
+    handle /socket.io/* {
+        reverse_proxy rahoot:3001
+    }
+    handle /* {
+        reverse_proxy rahoot:3000
+    }
+}
