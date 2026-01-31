@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, ElementType, PropsWithChildren } from "react"
 import type { AnswerContent } from "@rahoot/web/utils/answer"
 
 type Props = PropsWithChildren &
-  ButtonHTMLAttributes<HTMLButtonElement> & {
+  Omit<ButtonHTMLAttributes<HTMLButtonElement>, "content"> & {
     icon: ElementType
     content?: AnswerContent
   }
