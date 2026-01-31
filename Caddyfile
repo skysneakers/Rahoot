@@ -1,7 +1,5 @@
+# HTTP-only config (for Elastic IP or before HTTPS/domain is set up)
 :80 {
-    redir https://{host}{uri} permanent
-}
-crabquiz.crabdance.com {
     handle /socket.io/* {
         reverse_proxy rahoot:3001
     }
